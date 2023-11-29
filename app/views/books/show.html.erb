@@ -3,14 +3,14 @@
     <div class="row">
       <%= render 'books/new', book: @book, user: @user %>
     <div class="col-md-8 offset-md-1">
-     　
+
      　<h2>Book detail</h2>
      <table class="table">
       <tbody>
         <tr>
           <td>
             <%= link_to user_path(@user.id) do %>
-            <%= image_tag @user.get_image %><br>
+         <%= image_tag @user.get_profile_image %>
             <%= @books.user.name %>
             <%end%>
           </td>
@@ -26,7 +26,7 @@
           <% end %>
           </td>
           <td>
-             <% if @book.user == current_user %>
+             <% if @books.user == current_user %>
             <%= link_to "Destroy", book_path(@books.id), method: :delete, class: "btn btn-sm btn-danger", "data-confirm" => "本当に消しますか？" %>
          <% end %>
           </td>

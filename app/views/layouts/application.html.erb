@@ -15,29 +15,29 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-    
+
          <%= link_to "Bookers", root_path, class: "navbar-brand" %>
-      
-     <% if user_signed_in? %> 
+
+     <% if user_signed_in? %>
      <ul class="navbar-nav ml-auto">
        <li>
         <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
         <i class="fa-solid fa-house"></i> Home
         <% end %>
        </li>
-       
+
         <li>
          <%= link_to  users_path, class: "nav-link text-light" do %>
        <i class="fa-solid fa-users"></i> Users
        <% end %>
        </li>
-       
+
         <li>
          <%= link_to  books_path, class: "nav-link text-light" do %>
       <i class="fa-solid fa-book-open"></i> Books
       <% end %>
        </li>
-       
+
         <li>
             <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
         <i class="fa-solid fa-right-from-bracket"></i> Log out
@@ -51,13 +51,13 @@
        <i class="fa-solid fa-house"></i> Home
        <% end %>
         </li>
-       
+
         <li>
          <%= link_to  about_path, class: "nav-link text-light" do %>
       <i class="fa-solid fa-link"></i> About
       <% end %>
        </li>
-          
+
         <li>
           <%= link_to  new_user_registration_path, class: "nav-link text-light" do %>
         <i class="fa-solid fa-user-plus"></i> Sign up
@@ -70,6 +70,8 @@
         </li>
       </ul>
      <% end %>
+     </div>
+     </nav>
     </header>
     <main> <%= yield %></main>
   <footer>
@@ -81,7 +83,7 @@
     </div>
   </div>
 </footer>
-   
-    
+
+
   </body>
 </html>
